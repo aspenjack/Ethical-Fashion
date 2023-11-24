@@ -18,14 +18,15 @@ create table company_country (
 );
 
 --cleaned_df
+--can't have foreign key to company country because not all companies exist 
 create table company_metric (
     Company varchar(80) not null,
     Year int not null,
     Value numeric not null,
     Metric varchar(400) not null,
-    primary key (Company, Metric),
-    foreign key (Company) references company_country(Company)
+    primary key (Company, Metric)
 );
+
 
 --combined_df
 create table company_scores (
