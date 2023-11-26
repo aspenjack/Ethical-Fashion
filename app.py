@@ -6,6 +6,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
+from flask_cors import CORS
+
 from postgres import username, password, hostname, port
 database = 'Ethical_Fashion'
 
@@ -26,6 +28,7 @@ session = Session(conn)
 
 # 2. Create an app, being sure to pass __name__
 app = Flask(__name__)
+CORS(app)
 
 
 # 3. Define what to do when a user hits the index route
