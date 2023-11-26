@@ -58,12 +58,12 @@ def com_summary():
  
     for company, overall_mean, sustainable_sourcing_mean, overconsumption_mean,deforestation_mean, fair_wages_mean in summary:
         company_summ_dict = {}
-        company_summ_dict["comapny"] = company
-        company_summ_dict["overall_mean"] = overall_mean
-        company_summ_dict["sustainable_sourcing_mean"] = sustainable_sourcing_mean
-        company_summ_dict["overconsumption_mean"] = overconsumption_mean
-        company_summ_dict["deforestation_mean"] = deforestation_mean
-        company_summ_dict["fair_wages_mean"] = fair_wages_mean
+        company_summ_dict["company"] = company
+        company_summ_dict["overall_mean"] = float(overall_mean)
+        company_summ_dict["sustainable_sourcing_mean"] = float(sustainable_sourcing_mean)
+        company_summ_dict["overconsumption_mean"] = float(overconsumption_mean)
+        company_summ_dict["deforestation_mean"] = float(deforestation_mean)
+        company_summ_dict["fair_wages_mean"] = float(fair_wages_mean)
         
         all_names.append(company_summ_dict)
 
@@ -87,11 +87,11 @@ def cou_summary():
 
         country_summ_dict = {}
         country_summ_dict["country"] = country
-        country_summ_dict["overall_mean"] = overall_mean
-        country_summ_dict["sustainable_sourcing_mean"] = sustainable_sourcing_mean
-        country_summ_dict["overconsumption_mean"] = overconsumption_mean
-        country_summ_dict["deforestation_mean"] = deforestation_mean
-        country_summ_dict["fair_wages_mean"] = fair_wages_mean
+        country_summ_dict["overall_mean"] = float(overall_mean)
+        country_summ_dict["sustainable_sourcing_mean"] = float(sustainable_sourcing_mean)
+        country_summ_dict["overconsumption_mean"] = float(overconsumption_mean)
+        country_summ_dict["deforestation_mean"] = float(deforestation_mean)
+        country_summ_dict["fair_wages_mean"] = float(fair_wages_mean)
         
         all_names.append(country_summ_dict)
         
@@ -116,10 +116,10 @@ def com_scores():
 
         company_scores_dict = {}
         company_scores_dict["company"] = company
-        company_scores_dict["year"] = year
-        company_scores_dict["value"] = value
+        company_scores_dict["year"] = int(year)
+        company_scores_dict["value"] = float(value)
         company_scores_dict["metric"] = metric
-        company_scores_dict["ie"] = id
+        company_scores_dict["id"] = int(id)
         company_scores_dict["state"] = state
         company_scores_dict["country"] = country
         
@@ -143,7 +143,7 @@ def com_cou():
 
         company_country_dict = {}
         company_country_dict["company"] = company
-        company_country_dict["id"] = id
+        company_country_dict["id"] = int(id)
         company_country_dict["state"] = state
         company_country_dict["country"] = country
         
@@ -167,8 +167,8 @@ def com_metric():
 
         company_metric_dict = {}
         company_metric_dict[company] = company
-        company_metric_dict["year"] = year
-        company_metric_dict["value"] = value
+        company_metric_dict["year"] = int(year)
+        company_metric_dict["value"] = float(value)
         company_metric_dict[metric] = metric
 
         all_names.append(company_metric_dict)

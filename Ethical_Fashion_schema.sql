@@ -14,7 +14,8 @@ create table company_country (
     ID int not null,
     State varchar(50),
     Country varchar(100) not null,
-    foreign key (Country) references country_summary (Country)
+    foreign key (Country) references country_summary (Country),
+    foreign key (Company) references company_metric (Company)
 );
 
 --cleaned_df
