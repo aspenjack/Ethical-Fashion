@@ -1,3 +1,13 @@
+--cleaned_df
+--can't have foreign key to company country because not all companies exist 
+create table company_metric (
+    Company varchar(80) not null,
+    Year int not null,
+    Value numeric not null,
+    Metric varchar(400) not null,
+    primary key (Company, Metric)
+);
+
 --country_summary
 create table country_summary (
     Country varchar(100) primary key,
@@ -14,20 +24,9 @@ create table company_country (
     ID int not null,
     State varchar(50),
     Country varchar(100) not null,
-    foreign key (Country) references country_summary (Country),
-    foreign key (Company) references company_metric (Company)
+    foreign key (Country) references country_summary (Country)
+    
 );
-
---cleaned_df
---can't have foreign key to company country because not all companies exist 
-create table company_metric (
-    Company varchar(80) not null,
-    Year int not null,
-    Value numeric not null,
-    Metric varchar(400) not null,
-    primary key (Company, Metric)
-);
-
 
 --combined_df
 create table company_scores (
@@ -39,7 +38,8 @@ create table company_scores (
     State varchar(50),
     Country varchar(100),
     primary key (Metric, Company),
-    foreign key (Company) references company_country(Company)
+    foreign key (Company) references company_country(Company),
+	foreign key (Company, Metric) references company_metric (Company, Metric)
 );
 
 --company_summary
