@@ -81,8 +81,14 @@ const countrySummary = 'http://127.0.0.1:5001/api/v1.0/country_summary';
 function buildCharts(selectedMetric) {
     d3.json(countrySummary, { mode: 'cors' })
         .then((data) => {
-            console.log(data);
+            //console.log(data);
             // Assuming data is an array of objects with properties like 'country', 'overall_mean', etc.
+            let test = data.map((d) => d)
+            for (let t in test) {
+                let test3 = test[t]
+                const { country, deforestation_mean, fair_wages_mean, overall_mean, overconsumption_mean, sustainable_sourcing_mean } = test3
+            }
+
             let x = data.map((d) => d.country);
             let y;
             // Determine which metric to use based on the selected value
@@ -109,14 +115,15 @@ function buildCharts(selectedMetric) {
                 {
                     x: x,
                     y: y,
+                    marker: {color: '#333333'},
                     type: 'bar',
                 },
             ];
             let trace1Layout = {
-                title: 'Sustainability Metric: ' + selectedMetric.replace(/_/g, ' '),
-                margin: { t: 100 },
+                title: 'Sustainability Metric: ' + selectedMetric.substring(0,1).toUpperCase() + selectedMetric.substring(1).replace(/_/g, ' '),
+                margin: { t: 200 },
                 hovermode: 'closest',
-                xaxis: { title: 'Countries' },
+                xaxis: { title: 'Countries', tickangle: -45 },
                 margin: { t: 100 },
             };
             Plotly.newPlot('plot', trace1, trace1Layout);
@@ -124,6 +131,7 @@ function buildCharts(selectedMetric) {
         .catch((error) => {
             console.error('Error fetching data:', error);
         });
+
 }
 function init() {
     let selector = d3.select('#selDataset');
@@ -136,11 +144,9 @@ function init() {
 }
 init();
 
-React
+//React
 
-Reply
-
-
+//Reply
 
 
 

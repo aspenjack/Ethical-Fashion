@@ -9,6 +9,8 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
 </head>
 
@@ -22,10 +24,10 @@
           </div>
         <div>
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                   <div style="background:#ffd966" class="well">
-                    <h2 style="color: #333333; font-family:Optima;">Sustainability Metrics</h2>
-                    <p>Numbers on hover reflect the mean score in 2021.</p>
+                    <h3 style="color: #333333; font-family:Optima;">Sustainability Metrics</h3>
+                    <p style="font-family: Optima; color:#333333">Numbers on hover reflect the mean score in 2021.</p>
                     <select id="selDataset">
                         <option value="overall_mean">Overall</option>
                         <option value="sustainable_sourcing_mean">Sustainable Sourcing</option>
@@ -34,23 +36,33 @@
                         <option value="fair_wages_mean">Fair Wages</option>
                     </select>
                   </div>
-                  <div class="col-md-5">
-                    <div id="plot"></div>
-                  </div>
-                <div>
+
+                </div>
+
             <div>
+              <div class="col-md-5" data-aos="flip-left">
+                <div id="plot1"></div>
+              </div>
+            </div>
 
+            </div>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="col-md-12" data-aos="flip-left">
+            <div id="plot"></div>
+          </div>
+        </div>
 
-
-
-
-
-
-
-    <div>
+    </div>
 
     <script type="text/javascript" src="logic.js"></script>
+    <script src="dist/aos.js"></script>
+    <script>
+      if (!window.Cypress) AOS.init();
+      // AOS.init();
+    </script>
    
         
 </body>
