@@ -1,8 +1,8 @@
-![Alt text](<Screenshot 2023-11-28 at 9.32.50 PM.png>)
+![Alt text](image.png)
 
 # Ethical-Fashion
 
-![MIT](https://img.shields.io/badge/License-MIT-blue)
+![MIT](https://img.shields.io/badge/License%20-%20MIT%20-%20%234e8983)
 ![contributors](https://img.shields.io/badge/contributors%20-%205-%20%23f0c86a)
 
 ## Description
@@ -38,11 +38,11 @@ To enable cross-origin sharing for our JavaScript, we use 'Flas-CORS' in our Fla
 # Data
 
 ## Source Data
-- **Sustainable Sourcing Materials Dataset:**(https://wikirate.org/Fashion_Revolution+5_3_Sustainable_Sourcing_Materials) The score the company received for procuring raw materials is a manner that minimizes environmental impact.
-- **Deforestation and Regeneration Dataset:** The score the company received for deforestation and reforestation efforts. `https://wikirate.org/Fashion_Revolution+Decarbonisation_Deforestation_and_Regeneration_Score`
-- **Overconsumption, Waste and Circularity:** The score the company received to reducing waste in the fashion industry. `https://wikirate.org/Fashion_Revolution+5_4_Overconsumption_Waste_Circularity`
-- **Towards Paying Living Wages Dataset:** The score the company received for their commitment to fair compensation. `https://wikirate.org/Fashion_Revolution+Towards_Paying_Living_Wages_Score_2021`
-- **Fashion Tranparecy Index:** List of companies and their headquarters. `https://wikirate.org/Fashion_Transparency_Index_2021_full_dataset?select2Id=12&slotSelector=._filter-result-slot&remote=&filter%5Bcompany_name%5D=&sort_by=company_name`
+- #### [Sustainable Sourcing Materials Dataset:](https://wikirate.org/Fashion_Revolution+5_3_Sustainable_Sourcing_Materials) The score the company received for procuring raw materials is a manner that minimizes environmental impact.
+- #### [Deforestation and Regeneration Dataset:](https://wikirate.org/Fashion_Revolution+Decarbonisation_Deforestation_and_Regeneration_Score) The score the company received for deforestation and reforestation efforts.
+- #### [Overconsumption, Waste and Circularity:](https://wikirate.org/Fashion_Revolution+5_4_Overconsumption_Waste_Circularity) The score the company received to reducing waste in the fashion industry.
+- #### [Towards Paying Living Wages Dataset:](https://wikirate.org/Fashion_Revolution+Towards_Paying_Living_Wages_Score_2021) The score the company received for their commitment to fair compensation.
+- #### [Fashion Tranparecy Index:](https://wikirate.org/Fashion_Transparency_Index_2021_full_dataset?select2Id=12&slotSelector=._filter-result-slot&remote=&filter%5Bcompany_name%5D=&sort_by=company_name) List of companies and their headquarters.
 
 ## Data Preprocessing
 Once we a acquired the data .csv files from Wiki rate we had to clean up the data by renaming columns, handlig missing values, and data merging.
