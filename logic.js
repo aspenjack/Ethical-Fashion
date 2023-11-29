@@ -87,6 +87,8 @@ function buildCharts(selectedMetric) {
             for (let t in test) {
                 let test3 = test[t]
                 const { country, deforestation_mean, fair_wages_mean, overall_mean, overconsumption_mean, sustainable_sourcing_mean } = test3
+                let deforest = deforestation_mean >3
+                console.log(deforest,deforestation_mean)
             }
 
             let x = data.map((d) => d.country);
