@@ -38,8 +38,8 @@ To enable cross-origin sharing for our JavaScript, we use 'Flas-CORS' in our Fla
 # Data
 
 ## Source Data
-- #### [Sustainable Sourcing Materials Dataset:](https://wikirate.org/Fashion_Revolution+5_3_Sustainable_Sourcing_Materials) The score the company received for procuring raw materials is a manner that minimizes environmental impact.
-- #### [Deforestation and Regeneration Dataset:](https://wikirate.org/Fashion_Revolution+Decarbonisation_Deforestation_and_Regeneration_Score) The score the company received for deforestation and reforestation efforts.
+- #### [Sustainable Sourcing Materials Dataset:](https://wikirate.org/Fashion_Revolution+5_3_Sustainable_Sourcing_Materials) The score the company received for procuring raw materials in a manner that minimizes environmental impact.
+- #### [Deforestation and Regeneration Dataset:](https://wikirate.org/Fashion_Revolution+Decarbonisation_Deforestation_and_Regeneration_Score) The score the company received for deforestation and their reforestation efforts.
 - #### [Overconsumption, Waste and Circularity:](https://wikirate.org/Fashion_Revolution+5_4_Overconsumption_Waste_Circularity) The score the company received to reducing waste in the fashion industry.
 - #### [Towards Paying Living Wages Dataset:](https://wikirate.org/Fashion_Revolution+Towards_Paying_Living_Wages_Score_2021) The score the company received for their commitment to fair compensation.
 - #### [Fashion Tranparecy Index:](https://wikirate.org/Fashion_Transparency_Index_2021_full_dataset?select2Id=12&slotSelector=._filter-result-slot&remote=&filter%5Bcompany_name%5D=&sort_by=company_name) List of companies and their headquarters.
@@ -48,7 +48,7 @@ To enable cross-origin sharing for our JavaScript, we use 'Flas-CORS' in our Fla
 Once we a acquired the data .csv files from Wiki rate we had to clean up the data by renaming columns, handlig missing values, and data merging.
 
 # Results and evaluation
-In the 4 metrics we discussed (Sustainability, Deforestation, Overconsumption, and Living Wages) Sweden and Hong Kong are the top rated countries overall. Gucci a company based in Italy has the highest overall score across over 200+ companies.  
+In the 4 metrics we discussed (Sustainability, Deforestation, Overconsumption, and Living Wages) Sweden and Hong Kong are the top rated countries overall. Gucci, a company based in Italy has the highest overall score across over 200+ companies.  
 
 ## License
 MIT
