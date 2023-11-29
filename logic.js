@@ -115,16 +115,24 @@ function buildCharts(selectedMetric) {
                 {
                     x: x,
                     y: y,
-                    marker: {color: '#333333'},
+                    marker: {color: '#dc4412'},
                     type: 'bar',
+                    text: y.map(value => value.toFixed(1)),
+                    textposition: 'outside',
                 },
             ];
             let trace1Layout = {
                 title: 'Sustainability Metric: ' + selectedMetric.substring(0,1).toUpperCase() + selectedMetric.substring(1).replace(/_/g, ' '),
-                margin: { t: 200 },
+                margin: { t: 50,
+                b:200,
+                l:100,
+                r:100 },
                 hovermode: 'closest',
-                xaxis: { title: 'Countries', tickangle: -45 },
-                margin: { t: 100 },
+                xaxis: { title: 'Countries',
+                tickangle: -45},
+                yaxis: { range: [0,10],
+                    title: 'Score (0-10)'},
+                automargin: true,
             };
             Plotly.newPlot('plot', trace1, trace1Layout);
         })
