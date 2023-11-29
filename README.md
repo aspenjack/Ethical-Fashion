@@ -1,9 +1,9 @@
-![app_image](file:///Users/velvetrobinson/Desktop/Screenshot%202023-11-28%20at%209.32.50%20PM.png)
+![Alt text](<Screenshot 2023-11-28 at 9.32.50 PM.png>)
 
 # Ethical-Fashion
 
 ![MIT](https://img.shields.io/badge/License-MIT-blue)
-![contributors]`https://img.shields.io/badge/contributors%20-%205-%20%23f0c86a`
+![contributors](https://img.shields.io/badge/contributors%20-%205-%20%23f0c86a)
 
 ## Description
 Interactive dashboard exploring ethical fashion metrics
@@ -38,7 +38,7 @@ To enable cross-origin sharing for our JavaScript, we use 'Flas-CORS' in our Fla
 # Data
 
 ## Source Data
-- **Sustainable Sourcing Materials Dataset:** The score the company received for procuring raw materials is a manner that minimizes environmental impact. `https://wikirate.org/Fashion_Revolution+5_3_Sustainable_Sourcing_Materials`
+- **Sustainable Sourcing Materials Dataset:**(https://wikirate.org/Fashion_Revolution+5_3_Sustainable_Sourcing_Materials) The score the company received for procuring raw materials is a manner that minimizes environmental impact.
 - **Deforestation and Regeneration Dataset:** The score the company received for deforestation and reforestation efforts. `https://wikirate.org/Fashion_Revolution+Decarbonisation_Deforestation_and_Regeneration_Score`
 - **Overconsumption, Waste and Circularity:** The score the company received to reducing waste in the fashion industry. `https://wikirate.org/Fashion_Revolution+5_4_Overconsumption_Waste_Circularity`
 - **Towards Paying Living Wages Dataset:** The score the company received for their commitment to fair compensation. `https://wikirate.org/Fashion_Revolution+Towards_Paying_Living_Wages_Score_2021`
