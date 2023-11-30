@@ -64,15 +64,16 @@ function init() {
     let selector = d3.select('#selDataset');
     selector.on('change', function () {
         let selectedMetric = d3.select(this).property('value');
+        let selectedMetric2 = d3.select(this).property('value');
         buildCharts(selectedMetric);
-        buildCharts2(selectedMetric);
         buildCharts2(selectedMetric2);
+        //buildCharts2(selectedMetric2);
     });
     // Fetch initial data with default metric
     buildCharts('overall_mean');
 }
 
-function buildCharts2(selectedMetric, selectedMetric2) {
+function buildCharts2(selectedMetric2) {
     d3.json(companySummary,{ mode: 'cors'})
         .then((response) => {
             let company_sum = response.map((d) => d)
@@ -84,11 +85,11 @@ function buildCharts2(selectedMetric, selectedMetric2) {
 
 
                 
-            let test = company_overall.map((d)=>d.overall_mean)
-            console.log(test)
+            // let test = company_overall.map((d)=>d.overall_mean)
+            // console.log(test)
 
             let x;
-            switch (selectedMetric) {
+            switch (selectedMetric2) {
                 case 'overall_mean':
                     x = company_overall.map((d) => d.overall_mean);
                     break;
@@ -108,6 +109,7 @@ function buildCharts2(selectedMetric, selectedMetric2) {
                     x = company_overall.map((d) => d.overall_mean); // Default to overall mean
             }
             let y;
+            //= company_overall.map((d) => d.company)
             // Determine which metric to use based on the selected value
             switch (selectedMetric2) {
                 case 'overall_mean':
@@ -140,7 +142,8 @@ function buildCharts2(selectedMetric, selectedMetric2) {
                 },
             ];
             let trace2Layout = {
-                title: { text: "Companies That Scored<br> Between 5-10 on Sustainability Metrics<br> " },
+                title: 'Companies that Scored Between 5-10 in: ' + selectedMetric2.substring(0,1).toUpperCase() + selectedMetric2.substring(1).replace(/_/g, ' '),
+                // { text: "Companies That Scored<br> Between 5-10 on Sustainability Metrics<br> " },
                 margin: { t: 50,
                 b:50,
                 l:200,
@@ -154,10 +157,12 @@ function buildCharts2(selectedMetric, selectedMetric2) {
             Plotly.newPlot('plot1', trace2, trace2Layout);
     
 
-        })
+        }).catch((error) => {
+            console.error('Error fetching data:', error);
+        });
 }
 init();
-buildCharts2()
+buildCharts2('overall_mean')
 //React
 
 //Reply
