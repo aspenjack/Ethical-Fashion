@@ -30,6 +30,7 @@ To enable cross-origin sharing for our JavaScript, we use 'Flas-CORS' in our Fla
 - **SQL**
 - **JavaScript**
 - **HTML**
+- **Flask**
 
 ## Python and JavaScript Packages Used
 - **Data Manipulation:** `pandas, sqlalchemy, numpy`
@@ -62,7 +63,8 @@ MIT
 
 
 ## Presentation
-##### [Ethical Fashion](https://docs.google.com/presentation/d/1KBZ5DekFBhwf85SwLfIWu-px6HFmbRi0PuHEEKDg_lw/edit#slide=id.p)
+##### [Ethical Fashion Powerpoint](https://docs.google.com/presentation/d/1KBZ5DekFBhwf85SwLfIWu-px6HFmbRi0PuHEEKDg_lw/edit#slide=id.p)
+#### [Ethical Fashion Video Presentation](https://drive.google.com/file/d/1QWyLdbZmRvFSJZFzcYQl3TTRFan-tDik/view?usp=sharing)
 
 ## Contact
 If there are any questions of concerns, we can be reached at:
