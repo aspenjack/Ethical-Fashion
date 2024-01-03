@@ -42,6 +42,7 @@ def api():
         f"/api/v1.0/company_scores <br/>"
         f"/api/v1.0/country_summary <br/>"
         f"/api/v1.0/company_metric <br/>"
+        f"/api/v1.0/company_overall_mean <br/>"
             )
 
 @app.route("/")
@@ -181,10 +182,10 @@ def com_metric():
         company_metric_dict["company"] = company
         company_metric_dict["year"] = int(year)
         company_metric_dict["value"] = float(value)
-        company_metric_dict[metric] = metric
+        company_metric_dict["metric"] = metric
 
-        all_names.append(company_metric_dict)
-        
+        all_names.append(company_metric_dict)  
+
     return jsonify(all_names)
 
 @app.route("/api/v1.0/company_overall_mean")
