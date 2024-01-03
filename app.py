@@ -5,7 +5,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 
 from postgres import username, password, hostname, port
@@ -22,6 +22,7 @@ company_country = Base.classes.company_country
 company_scores = Base.classes.company_scores
 company_summary = Base.classes.company_summary
 company_metric = Base.classes.company_metric
+company_overall_mean = Base.classes.company_overall_mean
 
 # Create a link from Python to DB
 session = Session(conn)
@@ -32,8 +33,8 @@ CORS(app)
 
 
 # 3. Define what to do when a user hits the index route
-@app.route("/")
-def home():
+@app.route("/api")
+def api():
     return (
         "Welcome to my 'Home' page! <br/>"
         f"/api/v1.0/company_summary <br/>"
@@ -42,6 +43,14 @@ def home():
         f"/api/v1.0/country_summary <br/>"
         f"/api/v1.0/company_metric <br/>"
             )
+
+@app.route("/")
+def home():
+    return render_template('index.html')
+
+@app.route("/map")
+def map ():
+    return render_template('holt.html')
 
 
 # 4. Define what to do when a user hits the /about route
@@ -169,12 +178,39 @@ def com_metric():
     for company, year, value, metric in summary:
 
         company_metric_dict = {}
-        company_metric_dict[company] = company
+        company_metric_dict["company"] = company
         company_metric_dict["year"] = int(year)
         company_metric_dict["value"] = float(value)
         company_metric_dict[metric] = metric
 
         all_names.append(company_metric_dict)
+        
+    return jsonify(all_names)
+
+@app.route("/api/v1.0/company_overall_mean")
+def com_loc():
+    session = Session(conn)
+    summary = session.query(company_overall_mean.company,
+                            company_overall_mean.country,
+                            company_overall_mean.latitude,
+                            company_overall_mean.longitude,
+                            company_overall_mean.overall_mean
+                            ).all()
+
+    session.close()
+    all_names = []
+    #list(np.ravel(summary))
+    for company, country, latitude, longitude, overall_mean in summary:
+
+        company_overall_dict = {}
+        company_overall_dict["company"] = company
+        company_overall_dict["country"] = country
+        company_overall_dict["latitude"] = float(latitude)
+        company_overall_dict["longitude"] = float(longitude)
+        company_overall_dict["overall_mean"] = float(overall_mean)
+
+
+        all_names.append(company_overall_dict)
         
     return jsonify(all_names)
 

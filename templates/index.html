@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ethical Fashion</title>
+
+  <!-- plotly library -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- bootstrap style sheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- D3 Library -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Leaflet Java script code -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+
+
+  <!-- Marker cluster JavaScript code -->
+  <script type="text/javascript"
+    src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- cluster css -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+  <!-- OurCSS -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+
+
+</head>
+
+<body style="background:#faefe0">
+
+  <!-- "/api/v1.0/company_summary <br/>"
+        f"/api/v1.0/company_country <br/>"
+        f"/api/v1.0/company_scores <br/>"
+        f"/api/v1.0/country_summary <br/>"
+        f"/api/v1.0/company_metric <br/>" -->
+
+  <nav>
+    <h1>Ethical Fashion</h1>
+    <div class="">
+      <a href="/api/v1.0/company_summary">Summary</a>
+      <a href="/api/v1.0/company_country">Country</a>
+      <a href="/api/v1.0/company_scores">Scores</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div style="background:transparent" class="col-md-12 jumbotron text-center">
+        <h1 style="color: #000000; font-family:Optima;">Ethical Fashion Dashboard</h1><br>
+        <p style="color: #000000; font-family:Optima;">For over a decade, there have been campaign efforts to create a
+          clean, safe, fair, transparent and accountable fashion industry.
+          Fashion Revolution has created the Fashion Transparency Index to spotlight on how much information 250 of the
+          world’s largest
+          fashion brands disclose about their supply chain practices and impacts, to fuel your activism and drive
+          greater accountability.
+          Below, we have created two charts to help you see how countries and fashion companies are doing globally.</p>
+        <br>
+        <p style="color: #4e8983; font-family:Optima;">Use the interactive charts below to explore the dataset</p>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-md-12">
+            <div style="background:#f0c86a" class="well">
+              <h3 style="color: #000000; font-family:Optima;">Sustainability Metrics</h3>
+              <p style="font-family: Optima; color:#000000">Numbers on hover reflect the mean score in 2021 on a scale
+                of 0-10.</p>
+              <select id="selDataset">
+                <option value="overall_mean">Overall</option>
+                <option value="sustainable_sourcing_mean">Sustainable Sourcing</option>
+                <option value="overconsumption_mean">Overconsumption</option>
+                <option value="deforestation_mean">Deforestation</option>
+                <option value="fair_wages_mean">Fair Wages</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <div class="col-md-12" data-aos="flip-left">
+              <div id="plot"></div>
+            </div>
+          </div>
+
+          <div class="col-md-12" data-aos="flip-left">
+            <p></p>
+            <div id="plot1"></div>
+          </div>
+
+          <!-- <div class="row"> -->
+          <div class="col-md-12" data-aos="zoom-in-up">
+            <p></p>
+            <h2 style="font-family:Optima; color:#dc4412">Ethical Fashion Map</h2>
+            <div id="map"></div>
+            <!-- <a href="/map">
+              <h2 style="font-family:Optima; color:#dc4412">Ethical Fashion Map</h2>
+              <img src="/static/image/Map.png" alt="Link to Map"
+                style="width: 1150px; height: 450px; border:1px solid black;">
+            </a> -->
+          </div>
+          <!-- </div> -->
+
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+
+
+        <br>
+
+      </div>
+
+      <script type="text/javascript" src="/static/js/logicv2.js"></script>
+      <script src="/static/dist/aos.js"></script>
+      <script>
+        // if (!window.Cypress) AOS.init();
+        AOS.init();
+      </script>
+
+
+</body>
+
+</html>
